@@ -1,1 +1,111 @@
+/* ============================================================
+   NEXTBYTE — GLASS UI  (glassmorphism components)
+   ============================================================ */
 
+.glass {
+  background: rgba(10, 20, 34, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 16px;
+}
+
+.glass-card {
+  background: rgba(10, 20, 34, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 212, 255, 0.10);
+  border-radius: 12px;
+  transition: border-color .3s, box-shadow .3s;
+}
+.glass-card:hover {
+  border-color: rgba(0, 212, 255, 0.28);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.08);
+}
+
+/* PROGRESS BARS */
+.progress-bar {
+  height: 4px;
+  background: rgba(255,255,255,.06);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: .6rem;
+}
+.progress-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-b));
+  box-shadow: 0 0 10px rgba(0,212,255,.4);
+  transition: width 1.2s cubic-bezier(.4,0,.2,1);
+  width: 0;
+}
+.progress-fill.animate { width: var(--pct, 80%); }
+
+/* TOOLTIP */
+.tooltip-wrap { position: relative; display: inline-flex; }
+.tooltip {
+  position: absolute; bottom: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%);
+  background: #0a1422; border: 1px solid rgba(0,212,255,.2);
+  color: #e8f2ff; font-size: .75rem; padding: .4rem .8rem;
+  border-radius: 6px; white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity .2s;
+}
+.tooltip-wrap:hover .tooltip { opacity: 1; }
+
+/* GLOW DIVIDER */
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,212,255,.3), transparent);
+  margin: 0;
+  border: none;
+}
+
+/* TECH BADGE */
+.tech-badge {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: rgba(0,212,255,.06); border: 1px solid rgba(0,212,255,.14);
+  border-radius: 6px; padding: .3rem .7rem;
+  font-family: 'JetBrains Mono', monospace; font-size: .72rem;
+  color: #7a9ab8; letter-spacing: .05em;
+  transition: border-color .2s, color .2s;
+}
+.tech-badge:hover { border-color: rgba(0,212,255,.3); color: #00d4ff; }
+.tech-badge svg { width: 13px; height: 13px; }
+
+/* CARD SHINE EFFECT */
+.shine {
+  position: relative; overflow: hidden;
+}
+.shine::after {
+  content: '';
+  position: absolute; top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.04), transparent);
+  transform: skewX(-20deg);
+  transition: left .6s ease;
+}
+.shine:hover::after { left: 150%; }
+
+/* STATS ROW */
+.stats-row {
+  display: flex; gap: 2rem; flex-wrap: wrap;
+  padding: 1.6rem 2rem;
+  background: rgba(10,20,34,.5);
+  border: 1px solid rgba(0,212,255,.10);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+}
+
+.stats-value {
+  font-size: 1.8rem; font-weight: 800;
+  letter-spacing: -.03em;
+  background: linear-gradient(135deg, #e8f2ff, #7a9ab8);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.stats-value.cyan { background: linear-gradient(135deg, #00d4ff, #0a6cff); -webkit-background-clip: text; background-clip: text; }
+.stats-label {
+  font-size: .78rem; color: #3d5470;
+  font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; margin-top: .1rem;
+}
