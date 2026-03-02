@@ -1,1 +1,134 @@
+/* ============================================================
+   NEXTBYTE — ANIMATIONS CSS
+   ============================================================ */
 
+/* ---- HERO ENTRANCE ---- */
+@keyframes heroFadeUp {
+  from { opacity:0; transform:translateY(40px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes heroFadeIn {
+  from { opacity:0; }
+  to   { opacity:1; }
+}
+@keyframes slideInRight {
+  from { opacity:0; transform:translateX(60px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+
+.hero-badge   { animation: heroFadeUp .7s ease .1s both; }
+.hero-title   { animation: heroFadeUp .7s ease .25s both; }
+.hero-desc    { animation: heroFadeUp .7s ease .4s both; }
+.hero-actions { animation: heroFadeUp .7s ease .55s both; }
+.hero-stats   { animation: heroFadeUp .7s ease .7s both; }
+.hero-right   { animation: slideInRight .9s ease .3s both; }
+
+/* ---- STAGGER HELPER ---- */
+.stagger > *:nth-child(1) { transition-delay: .05s; }
+.stagger > *:nth-child(2) { transition-delay: .15s; }
+.stagger > *:nth-child(3) { transition-delay: .25s; }
+.stagger > *:nth-child(4) { transition-delay: .35s; }
+.stagger > *:nth-child(5) { transition-delay: .45s; }
+.stagger > *:nth-child(6) { transition-delay: .55s; }
+
+/* ---- TYPING CURSOR (used on hero badge) ---- */
+@keyframes typingBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ---- PARTICLE CANVAS ---- */
+#particleCanvas {
+  position: absolute; inset: 0;
+  pointer-events: none; z-index: 0;
+}
+
+/* ---- COUNTER ANIMATION ---- */
+.counter { display: inline-block; }
+
+/* ---- GLITCH EFFECT (logo on hover) ---- */
+@keyframes glitch1 {
+  0%   { clip-path: inset(40% 0 61% 0); transform: translate(-2px,0); }
+  20%  { clip-path: inset(92% 0 1% 0);  transform: translate(2px,0); }
+  40%  { clip-path: inset(43% 0 51% 0); transform: translate(1px,0); }
+  60%  { clip-path: inset(25% 0 58% 0); transform: translate(-2px,0); }
+  80%  { clip-path: inset(54% 0 7% 0);  transform: translate(2px,0); }
+  100% { clip-path: inset(58% 0 43% 0); transform: translate(-1px,0); }
+}
+@keyframes glitch2 {
+  0%   { clip-path: inset(24% 0 29% 0); transform: translate(2px,0); }
+  20%  { clip-path: inset(54% 0 11% 0); transform: translate(-2px,0); }
+  40%  { clip-path: inset(67% 0 7% 0);  transform: translate(1px,0); }
+  60%  { clip-path: inset(14% 0 62% 0); transform: translate(-1px,0); }
+  80%  { clip-path: inset(87% 0 3% 0);  transform: translate(2px,0); }
+  100% { clip-path: inset(33% 0 43% 0); transform: translate(-2px,0); }
+}
+
+.logo:hover { position: relative; }
+.logo:hover::before,
+.logo:hover::after {
+  content: attr(data-text);
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  font-weight: 900; font-size: inherit; letter-spacing: -.04em;
+  pointer-events: none;
+}
+.logo:hover::before {
+  color: #00d4ff; opacity: .7;
+  animation: glitch1 .4s infinite linear alternate-reverse;
+}
+.logo:hover::after {
+  color: #0a6cff; opacity: .7;
+  animation: glitch2 .4s infinite linear alternate-reverse;
+}
+
+/* ---- MORPHING BLOB ---- */
+@keyframes morph {
+  0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25%     { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50%     { border-radius: 50% 60% 30% 60% / 30% 70% 50% 60%; }
+  75%     { border-radius: 40% 60% 60% 40% / 60% 30% 60% 40%; }
+}
+
+.blob {
+  animation: morph 8s ease-in-out infinite;
+  background: linear-gradient(135deg, rgba(10,108,255,.15), rgba(108,63,255,.12));
+  filter: blur(40px);
+}
+
+/* ---- SCAN LINE ---- */
+@keyframes scanLine {
+  0%   { top: -10%; opacity: .6; }
+  100% { top: 110%;  opacity: 0; }
+}
+.scan-line {
+  position: absolute; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0,212,255,.5), transparent);
+  animation: scanLine 4s linear infinite;
+  pointer-events: none;
+}
+
+/* ---- ROTATING BORDER ---- */
+@keyframes rotateBorder {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.spin-border {
+  position: relative;
+}
+.spin-border::before {
+  content: '';
+  position: absolute; inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, var(--accent), var(--accent-b), var(--accent-v), var(--accent), transparent 60%);
+  animation: rotateBorder 4s linear infinite;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.spin-border:hover::before { opacity: 1; }
+
+/* ---- FADE DELAYS (for stagger) ---- */
+.d1{animation-delay:.1s!important}
+.d2{animation-delay:.2s!important}
+.d3{animation-delay:.3s!important}
+.d4{animation-delay:.4s!important}
+.d5{animation-delay:.5s!important}
+.d6{animation-delay:.6s!important}
