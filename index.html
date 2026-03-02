@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="NextByte — Empresa de desarrollo de software de alto impacto. Soluciones tecnológicas a largo plazo."/>
+  <meta name="theme-color" content="#03050a"/>
+  <title>NextByte | Software Development</title>
+
+  <!-- Preconnect fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/glass-ui.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- ============================================================ NAVBAR -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="#hero" data-text="NextByte">
+      <span>Next</span><span style="color:var(--accent)">Byte</span>
+      <i class="logo-dot"></i>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#team">Equipo</a></li>
+      <li><a href="#why">¿Por qué?</a></li>
+      <li><a href="#contact" class="nav-cta">Contáctanos</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<nav class="nav-mobile" id="mobileNav">
+  <a href="#about">Nosotros</a>
+  <a href="#services">Servicios</a>
+  <a href="#team">Equipo</a>
+  <a href="#why">¿Por qué nosotros?</a>
+  <a href="#contact">Contáctanos</a>
+</nav>
+
+<!-- ============================================================ HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <canvas id="particleCanvas"></canvas>
+  </div>
+
+  <div class="container">
+    <div class="hero-layout">
+
+      <!-- Left -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Empresa de Software &nbsp;·&nbsp; Est. 2025
+        </div>
+
+        <h1 class="hero-title">
+          <span class="line">Construimos el</span>
+          <span class="line hl">Futuro Digital</span>
+          <span class="line">byte a byte.</span>
+        </h1>
+
+        <p class="hero-desc">
+          En <strong>NextByte</strong> desarrollamos soluciones de software robustas,
+          escalables y orientadas al largo plazo. Transformamos ideas en productos
+          que perduran.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Ver Servicios
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            Hablar con el equipo →
+          </a>
+        </div>
+
+        <div class="hero-stats stagger">
+          <div class="stat-item">
+            <div class="stat-num"><span class="counter" data-target="12">0</span><span>+</span></div>
+            <div class="stat-label">proyectos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span class="counter" data-target="5">0</span><span>+</span></div>
+            <div class="stat-label">clientes activos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span class="counter" data-target="100">0</span><span>%</span></div>
+            <div class="stat-label">satisfacción</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Code Window -->
+      <div class="hero-right" style="position:relative">
+        <div class="code-window">
+          <div class="code-titlebar">
+            <span class="tb-dot"></span>
+            <span class="tb-dot"></span>
+            <span class="tb-dot"></span>
+            <span class="tb-title">nextbyte/core/vision.ts</span>
+          </div>
+          <div class="code-body">
+            <div class="code-line"><span class="ln">1</span><span class="cm">// NextByte — Building the future</span></div>
+            <div class="code-line"><span class="ln">2</span><span></span></div>
+            <div class="code-line"><span class="ln">3</span><span><span class="kw">interface</span> <span class="fn">Company</span> {</span></div>
+            <div class="code-line"><span class="ln">4</span><span>&nbsp;&nbsp;name: <span class="str">"NextByte"</span>;</span></div>
+            <div class="code-line"><span class="ln">5</span><span>&nbsp;&nbsp;focus: <span class="str">"Software Development"</span>;</span></div>
+            <div class="code-line"><span class="ln">6</span><span>&nbsp;&nbsp;horizon: <span class="str">"Long Term"</span>;</span></div>
+            <div class="code-line"><span class="ln">7</span><span>}</span></div>
+            <div class="code-line"><span class="ln">8</span><span></span></div>
+            <div class="code-line"><span class="ln">9</span><span><span class="kw">const</span> <span class="ky">nextbyte</span>: <span class="fn">Company</span> = {</span></div>
+            <div class="code-line"><span class="ln">10</span><span>&nbsp;&nbsp;name: <span class="str">"NextByte"</span>,</span></div>
+            <div class="code-line"><span class="ln">11</span><span>&nbsp;&nbsp;focus: <span class="str">"Software Development"</span>,</span></div>
+            <div class="code-line"><span class="ln">12</span><span>&nbsp;&nbsp;horizon: <span class="str">"Long Term"</span>,</span></div>
+            <div class="code-line"><span class="ln">13</span><span>};</span></div>
+            <div class="code-line"><span class="ln">14</span><span></span></div>
+            <div class="code-line"><span class="ln">15</span><span><span class="fn">launch</span>(nextbyte);<span class="cursor-blink"></span></span></div>
+          </div>
+        </div>
+
+        <!-- Floating badges -->
+        <div class="floating-tag ft-1">
+          <span class="ft-icon">🚀</span>
+          <div class="ft-text">
+            <strong>Deployment exitoso</strong>
+            <span>v2.4.1 — producción</span>
+          </div>
+        </div>
+        <div class="floating-tag ft-2">
+          <span class="ft-icon">✅</span>
+          <div class="ft-text">
+            <strong>Tests pasados</strong>
+            <span>98 / 98 specs</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-layout">
+
+      <!-- Orbital Diagram -->
+      <div class="about-diagram reveal-l">
+        <div class="orbit orbit-1">
+          <div class="orbit-node" style="top:-23px;left:50%;transform:translateX(-50%)">💡</div>
+        </div>
+        <div class="orbit orbit-2">
+          <div class="orbit-node" style="top:-23px;left:50%;transform:translateX(-50%)">⚡</div>
+          <div class="orbit-node" style="bottom:-23px;left:50%;transform:translateX(-50%)">🔒</div>
+        </div>
+        <div class="orbit orbit-3">
+          <div class="orbit-node" style="top:-23px;left:50%;transform:translateX(-50%)">🌐</div>
+          <div class="orbit-node" style="top:50%;right:-23px;transform:translateY(-50%)">📱</div>
+          <div class="orbit-node" style="bottom:-23px;left:50%;transform:translateX(-50%)">☁️</div>
+        </div>
+        <div class="about-center">
+          <span>Next</span>
+          <span style="color:var(--accent)">Byte</span>
+        </div>
+      </div>
+
+      <!-- Mission / Vision / Values -->
+      <div class="about-content reveal-r">
+        <span class="tag">Nuestra Esencia</span>
+        <h2 class="section-title">Misión, Visión<br>& Valores</h2>
+        <p class="section-sub" style="margin-bottom:2rem">
+          Somos más que una empresa de software. Somos arquitectos digitales comprometidos
+          con construir soluciones que trasciendan el tiempo.
+        </p>
+
+        <div class="mv-cards stagger">
+          <div class="mv-card mission">
+            <div class="mv-label">Misión</div>
+            <div class="mv-title">🎯 Desarrollar para el futuro</div>
+            <p class="mv-text">
+              Brindar soluciones de software de alta calidad que resuelvan problemas reales,
+              con tecnología de vanguardia, equipos apasionados y una visión de largo plazo
+              que genera valor duradero para nuestros clientes.
+            </p>
+          </div>
+          <div class="mv-card vision">
+            <div class="mv-label">Visión</div>
+            <div class="mv-title">🔭 Ser el referente tecnológico</div>
+            <p class="mv-text">
+              Convertirnos en la empresa de desarrollo de software más confiable de la región,
+              reconocida por la excelencia técnica, la innovación constante y el impacto positivo
+              en cada proyecto que emprendemos.
+            </p>
+          </div>
+          <div class="mv-card values">
+            <div class="mv-label">Valores</div>
+            <div class="mv-title">💎 Excelencia · Integridad · Innovación</div>
+            <p class="mv-text">
+              Nos guiamos por la transparencia total con nuestros clientes, el compromiso
+              con la calidad en cada línea de código y la cultura de aprendizaje continuo
+              que nos mantiene siempre a la vanguardia.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="services-hd reveal">
+      <span class="tag">Lo que hacemos</span>
+      <h2 class="section-title">Nuestros <span class="accent">Servicios</span></h2>
+      <p class="section-sub">
+        Desde aplicaciones web hasta sistemas empresariales complejos — entregamos
+        software que escala con tu negocio.
+      </p>
+    </div>
+
+    <div class="services-grid stagger">
+
+      <div class="service-card shine reveal">
+        <div class="service-icon ic-b">🌐</div>
+        <h3 class="service-name">Desarrollo Web</h3>
+        <p class="service-desc">
+          Aplicaciones web modernas, rápidas y escalables. Desde landing pages hasta
+          plataformas SaaS completas con experiencias de usuario excepcionales.
+        </p>
+        <div class="service-tags">
+          <span class="stag">React</span>
+          <span class="stag">Next.js</span>
+          <span class="stag">TypeScript</span>
+          <span class="stag">Node.js</span>
+        </div>
+      </div>
+
+      <div class="service-card shine reveal">
+        <div class="service-icon ic-c">📱</div>
+        <h3 class="service-name">Apps Móviles</h3>
+        <p class="service-desc">
+          Aplicaciones nativas e híbridas para iOS y Android. Diseño centrado en el usuario
+          con rendimiento de primer nivel y experiencias fluidas.
+        </p>
+        <div class="service-tags">
+          <span class="stag">React Native</span>
+          <span class="stag">Flutter</span>
+          <span class="stag">Swift</span>
+          <span class="stag">Kotlin</span>
+        </div>
+      </div>
+
+      <div class="service-card shine reveal">
+        <div class="service-icon ic-v">⚙️</div>
+        <h3 class="service-name">Backend & APIs</h3>
+        <p class="service-desc">
+          Arquitecturas robustas, APIs RESTful y GraphQL, microservicios y sistemas
+          distribuidos diseñados para escalar millones de usuarios.
+        </p>
+        <div class="service-tags">
+          <span class="stag">Python</span>
+          <span class="stag">FastAPI</span>
+          <span class="stag">PostgreSQL</span>
+          <span class="stag">Redis</span>
+        </div>
+      </div>
+
+      <div class="service-card shine reveal">
+        <div class="service-icon ic-g">☁️</div>
+        <h3 class="service-name">Cloud & DevOps</h3>
+        <p class="service-desc">
+          Infraestructura en la nube, pipelines CI/CD, contenedores y automatización
+          para despliegues seguros y eficientes en cualquier escala.
+        </p>
+        <div class="service-tags">
+          <span class="stag">AWS</span>
+          <span class="stag">Docker</span>
+          <span class="stag">Kubernetes</span>
+          <span class="stag">Terraform</span>
+        </div>
+      </div>
+
+      <div class="service-card shine reveal">
+        <div class="service-icon ic-b">🤖</div>
+        <h3 class="service-name">IA & Automatización</h3>
+        <p class="service-desc">
+          Integración de inteligencia artificial, modelos de machine learning y automatización
+          de procesos para llevar tu negocio al siguiente nivel.
+        </p>
+        <div class="service-tags">
+          <span class="stag">Python</span>
+          <span class="stag">TensorFlow</span>
+          <span class="stag">LLMs</span>
+          <span class="stag">n8n</span>
+        </div>
+      </div>
+
+      <div class="service-card shine reveal">
+        <div class="service-icon ic-c">🛡️</div>
+        <h3 class="service-name">Consultoría Tech</h3>
+        <p class="service-desc">
+          Asesoría estratégica en arquitectura de software, revisión de código,
+          planificación tecnológica y roadmaps de producto para startups y empresas.
+        </p>
+        <div class="service-tags">
+          <span class="stag">Auditoría</span>
+          <span class="stag">Arquitectura</span>
+          <span class="stag">Roadmap</span>
+          <span class="stag">Mentoring</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ TEAM -->
+<section id="team">
+  <div class="container">
+    <div class="team-hd reveal">
+      <span class="tag">Las personas detrás del código</span>
+      <h2 class="section-title">Nuestro <span class="accent">Equipo</span></h2>
+      <p class="section-sub">
+        Un equipo joven, apasionado y multidisciplinario comprometido con construir
+        el mejor software posible.
+      </p>
+    </div>
+
+    <div class="team-grid stagger">
+
+      <div class="team-card reveal">
+        <div class="team-avatar">
+          <span class="avatar-initials">JR</span>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Jorge Ramírez</div>
+          <div class="team-role">CEO & Full-Stack Dev</div>
+          <p class="team-bio">Lidera la visión técnica y estratégica de NextByte. Apasionado por la arquitectura de software.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar">
+          <span class="avatar-initials">AL</span>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Ana López</div>
+          <div class="team-role">CTO & Backend Dev</div>
+          <p class="team-bio">Experta en sistemas distribuidos y bases de datos. Garantiza la solidez técnica de cada proyecto.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar">
+          <span class="avatar-initials">CM</span>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Carlos Morales</div>
+          <div class="team-role">Lead Frontend Dev</div>
+          <p class="team-bio">Especialista en React y experiencias de usuario que combinan estética y rendimiento.</p>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-avatar">
+          <span class="avatar-initials">SV</span>
+        </div>
+        <div class="team-info">
+          <div class="team-name">Sofía Vargas</div>
+          <div class="team-role">UX/UI Designer</div>
+          <p class="team-bio">Transforma ideas complejas en interfaces intuitivas y visualmente impactantes.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ WHY US -->
+<section id="why">
+  <div class="container">
+    <div class="why-layout">
+
+      <!-- Items -->
+      <div class="reveal-l">
+        <span class="tag">Nuestra diferencia</span>
+        <h2 class="section-title">¿Por qué elegir<br><span class="accent">NextByte</span>?</h2>
+        <p class="section-sub">No somos una agencia más. Somos tu socio tecnológico de largo plazo.</p>
+
+        <div class="why-items stagger">
+          <div class="why-item">
+            <div class="why-num">01</div>
+            <div class="why-content">
+              <h4>Código de calidad industrial</h4>
+              <p>Tests automatizados, revisiones de código rigurosas y documentación exhaustiva. Entregamos software que otros equipos pueden mantener y escalar.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">02</div>
+            <div class="why-content">
+              <h4>Transparencia total</h4>
+              <p>Comunicación constante, demos semanales y acceso en tiempo real al progreso de tu proyecto. Sin sorpresas al final.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">03</div>
+            <div class="why-content">
+              <h4>Visión a largo plazo</h4>
+              <p>No construimos soluciones que duran un año. Diseñamos arquitecturas pensadas para crecer contigo durante décadas.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">04</div>
+            <div class="why-content">
+              <h4>Equipo comprometido</h4>
+              <p>Cada miembro del equipo es un co-dueño del proyecto. Nos importa tanto el éxito de tu negocio como el tuyo.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal -->
+      <div class="reveal-r">
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <span class="t-dot"></span>
+            <span class="t-dot"></span>
+            <span class="t-dot"></span>
+            <span class="t-title">nextbyte — bash</span>
+          </div>
+          <div class="terminal-body">
+            <div class="t-line" data-typed>
+              <span class="t-prompt">❯</span>
+              <span class="t-cmd" data-text="nextbyte init --project my-app">nextbyte init --project my-app</span>
+            </div>
+            <div class="t-line">
+              <span class="t-out ok">✓ Proyecto inicializado correctamente</span>
+            </div>
+            <div class="t-line" data-typed>
+              <span class="t-prompt">❯</span>
+              <span class="t-cmd" data-text="nextbyte audit --quality">nextbyte audit --quality</span>
+            </div>
+            <div class="t-line">
+              <span class="t-out info">→ Analizando arquitectura...</span>
+            </div>
+            <div class="t-line">
+              <span class="t-out ok">✓ Cobertura de tests: 97.4%</span>
+            </div>
+            <div class="t-line">
+              <span class="t-out ok">✓ Performance score: A+</span>
+            </div>
+            <div class="t-line">
+              <span class="t-out ok">✓ Security audit: Passed</span>
+            </div>
+            <div class="t-line" data-typed>
+              <span class="t-prompt">❯</span>
+              <span class="t-cmd" data-text="nextbyte deploy --env production">nextbyte deploy --env production</span>
+            </div>
+            <div class="t-line">
+              <span class="t-out ok">🚀 Deployed successfully!</span>
+            </div>
+            <div class="t-line">
+              <span class="t-out info">→ https://my-app.nextbyte.dev</span>
+            </div>
+            <div class="t-line">
+              <span class="t-prompt">❯</span>
+              <span class="t-cmd"><span class="cursor-blink"></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrapper">
+      <span class="tag reveal">Trabajemos juntos</span>
+      <h2 class="section-title reveal">¿Tienes un <span class="accent">proyecto</span>?</h2>
+      <p class="section-sub reveal">
+        Cuéntanos tu idea. Nuestro equipo la analizará y te responderá en menos de 24 horas.
+      </p>
+
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required/>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="empresa">Empresa (opcional)</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa"/>
+        </div>
+        <div class="form-group">
+          <label for="servicio">Servicio de interés</label>
+          <select id="servicio" name="servicio">
+            <option value="">Selecciona un servicio…</option>
+            <option>Desarrollo Web</option>
+            <option>App Móvil</option>
+            <option>Backend & APIs</option>
+            <option>Cloud & DevOps</option>
+            <option>IA & Automatización</option>
+            <option>Consultoría Tech</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Cuéntanos tu proyecto</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente lo que necesitas construir…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+          Enviar mensaje
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      Next<span style="color:var(--accent)">Byte</span><i class="logo-dot" style="margin-left:.3rem"></i>
+    </div>
+    <p class="footer-copy">© <span id="footerYear"></span> NextByte. Todos los derechos reservados.</p>
+    <div class="footer-links">
+      <a href="#hero">Inicio</a>
+      <a href="#about">Nosotros</a>
+      <a href="#services">Servicios</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
